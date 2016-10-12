@@ -113,7 +113,7 @@ class ModuleCompiler {
       var sourceUri = Uri.parse(sourcePath);
       if (sourceUri.scheme == 'dart') {
         compilingSdk = true;
-      } else if (sourceUri.scheme == '' || sourceUri.scheme != 'package') {
+      } else if (sourceUri.scheme != 'package') {
         sourceUri = path.toUri(path.absolute(sourcePath));
       }
       Source source = context.sourceFactory.forUri2(sourceUri);
